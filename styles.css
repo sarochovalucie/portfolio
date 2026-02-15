@@ -1,0 +1,785 @@
+/* Reset stylů */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Hlavní barva */
+:root {
+    --primary-color: #333; /* Jemnější oranžová */
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+}
+
+/* Navigační Menu */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-item {
+    position: relative;
+    margin: 0 15px;
+}
+
+.nav-item a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.nav-item a:hover {
+    text-decoration: underline;
+}
+
+.nav-item.dropdown:hover .dropdown-menu,
+.nav-item.dropdown:focus-within .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    padding: 10px 0;
+    list-style: none;
+    border-radius: 5px;
+    min-width: 150px;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu a {
+    color: white;
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.dropdown-menu a:hover {
+    background-color: #444;
+}
+
+.nav-item.dropdown:focus-within .dropdown-menu {
+    display: block;
+}
+
+
+/* Logo a menu */
+.logo {
+    font-size: 1.5rem;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    /* Responzivní navigace */
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-menu {
+        flex-direction: column;
+    }
+    .nav-item {
+        margin: 10px 0;
+    }
+    .dropdown-menu {
+        position: static;
+    }
+}
+
+/* Nastavení základních stylů pro HTML a body */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Wrapper obalující celý obsah stránky */
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hlavní obsah stránky */
+main {
+    flex: 1;
+}
+
+/* Patička */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* Hero sekce */
+.hero {
+    background-image: url('images/thumbnail.jpg');
+    background-color: rgba(0, 0, 0, 0.66);
+    background-blend-mode: darken;
+    height: 80vh;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.hero .btn-group {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px;      
+    justify-content: center; 
+    margin-top: 20px; /
+}
+
+.hero .btn {
+    padding: 12px 25px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease-in-out;
+    white-space: nowrap; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero .btn:hover {
+    background-color: #000;
+}
+
+@media (max-width: 768px) {
+    .btn-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 80%;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+}
+
+/* Galerie */
+.gallery {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.gallery-item {
+    flex: 1 1 calc(33% - 40px);
+    max-width: calc(33% - 40px);
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.gallery-item p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* O mně */
+.about {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #e5e7eb;
+    border-radius: 10px;
+    margin: 40px auto;
+    max-width: 90%;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Responzivita */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .gallery-item {
+        flex: 1 1 calc(50% - 40px);
+        max-width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-item {
+        margin: 10px 0;
+    }
+
+    .gallery-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+/* Tiskové styly */
+@media print {
+    header, footer, nav, .hero {
+        display: none;
+    }
+
+    body {
+        color: #000;
+        background-color: #fff;
+    }
+
+    .about, .gallery {
+        margin: 0;
+        padding: 0;
+    }
+}
+/* Kategorie */
+.category {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.category h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.category-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.work-item {
+    flex: 1 1 calc(33% - 40px);
+    max-width: calc(33% - 40px);
+    text-align: center;
+}
+
+.work-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.work-item p {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .work-item {
+        flex: 1 1 calc(50% - 40px);
+        max-width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .work-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+/* Sekce kontakt */
+.contact {
+    padding: 60px 20px;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 160px); /* Výška obrazovky mínus výška hlavičky a patičky */
+}
+
+/* Kontejner kontaktu */
+.contact-container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.contact-info {
+    text-align: center;
+}
+
+.contact-info h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+/* Sociální sítě */
+.social-media {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-media li {
+    margin: 0;
+}
+
+.social-media a {
+    color: #333;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #858585;
+}
+
+/* Stylování hlavního nadpisu */
+.project-title {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.project-title h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.project-title h3{
+    font-size: medium;
+    color: #333;
+}
+
+/* Team Members Section */
+.team-members {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f9f9f9; /* Optional: Add a background color for better separation */
+}
+
+.team-members h2 {
+    font-size: clamp(2.5rem, 4vw, 3rem);
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* Flex Container for Team Members */
+.team-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allows team members to wrap to the next line */
+    gap: 20px;       /* Space between team members */
+    justify-content: center; /* Center the team members horizontally */
+}
+
+/* Individual Team Member */
+.team-member {
+    flex: 1 1 calc(25% - 40px); /* 4 columns with gap accounted */
+    max-width: calc(25% - 40px);
+    background-color: #fff; /* Optional: Add background for better separation */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: Add shadow */
+    text-align: center; /* Center the text */
+}
+
+/* Team Member Image */
+.team-member img {
+    width: 150px; /* Set a fixed width for uniformity */
+    height: 150px; /* Set a fixed height for uniformity */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-radius: 50%; /* Makes the image circular */
+    margin-bottom: 15px;
+}
+
+/* Team Member Name */
+.team-member h3 {
+    font-size: clamp(1.5rem, 2vw, 1.8rem);
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Team Member Description */
+.team-member p {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Responsive Adjustments for Team Members */
+@media (max-width: 992px) {
+    .team-member {
+        flex: 1 1 calc(33.33% - 40px); /* 3 columns */
+        max-width: calc(33.33% - 40px);
+    }
+}
+
+@media (max-width: 768px) {
+    .team-member {
+        flex: 1 1 calc(50% - 40px); /* 2 columns */
+        max-width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .team-member {
+        flex: 1 1 100%; /* 1 column */
+        max-width: 100%;
+    }
+}
+
+/* Promo fotografie */
+.promo-photos {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center; 
+}
+
+.promo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 10px;
+}
+
+.promo-grid img {
+    flex: 1 1 calc(30% - 20px);
+    max-width: calc(30% - 20px);
+    margin: 10px;
+    height: auto;
+    box-sizing: border-box;
+}
+
+
+/* Video z eventu */
+.event-video {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.event-video h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.event-video video {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
+
+/* Sekce Fotografie z eventu */
+.event-photos {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center; 
+}
+
+.event-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 10px;
+}
+
+.event-grid img {
+    flex: 1 1 calc(23% - 20px);
+    max-width: calc(23% - 20px);
+    margin: 10px;
+    height: auto;
+    box-sizing: border-box;
+}
+
+
+/* Marketingový plán */
+.marketing-plan {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.marketing-plan h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.marketing-plan a {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.marketing-plan a:hover {
+    text-decoration: underline;
+}
+
+/* Responzivita */
+@media (max-width: 992px) {
+    .promo-grid img,
+    .event-grid img {
+        flex: 1 1 calc(45% - 20px);
+        max-width: calc(45% - 20px);
+    }
+}
+
+@media (max-width: 600px) {
+    .promo-grid img,
+    .event-grid img {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+/* Galerie */
+.gallery-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.gallery-section h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.gallery-item {
+    flex: 1 1 calc(33% - 40px);
+    max-width: calc(33% - 40px);
+    box-sizing: border-box;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Responzivita pro galerii */
+@media (max-width: 992px) {
+    .gallery-item {
+        flex: 1 1 calc(50% - 40px);
+        max-width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+/* Stylování pro samostatnou fotku */
+.single-image {
+    text-align: center;
+    margin-bottom: 40px; /* Přidá prostor pod obrázkem */
+}
+
+.single-image img {
+    max-width: 30%;    
+    width: 100%; 
+    height: auto;      
+    border-radius: 8px;
+}
+
+/* Zarovnání nadpisů a odstavců v projektech */
+.project h2 {
+    text-align: center;
+    margin: 40px 0 20px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.project p {
+    text-align: center;
+    margin: 0 auto 20px;
+    max-width: 800px;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.project {
+    margin-bottom: 60px;
+}
+
+.project:first-of-type {
+    margin-top: 40px;
+}
+
+.presentation-gallery {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.thumbnail-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.thumbnail-item {
+    flex: 1 1 calc(20% - 20px);
+    max-width: calc(20% - 20px);
+    box-sizing: border-box;
+}
+
+.thumbnail-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.thumbnail-item img:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 992px) {
+    .thumbnail-item {
+        flex: 1 1 calc(33.33% - 20px);
+        max-width: calc(33.33% - 20px);
+    }
+}
+
+@media (max-width: 600px) {
+    .thumbnail-item {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+}
